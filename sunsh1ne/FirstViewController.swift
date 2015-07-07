@@ -10,6 +10,19 @@ import UIKit
 
 class FirstViewController: UIViewController {
 
+    @IBOutlet var eventTable: UITableView!
+    
+    @IBAction func addParticipant(sender: AnyObject) {
+        var newEvent: String = ""
+        var alert = UIAlertController(title: "New Event", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Enter", style: UIAlertActionStyle.Default, handler: nil))
+        alert.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
+            textField.placeholder = "Event Name"
+        })
+        
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
