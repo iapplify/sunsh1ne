@@ -12,15 +12,20 @@ class FirstViewController: UIViewController {
 
     @IBOutlet var eventTable: UITableView!
     
+    var eventNameInput: UITextField?
     @IBAction func addParticipant(sender: AnyObject) {
-        var newEvent: String = ""
         var alert = UIAlertController(title: "New Event", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Enter", style: UIAlertActionStyle.Default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Enter", style: UIAlertActionStyle.Default, handler: someHandler))
         alert.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
             textField.placeholder = "Event Name"
+            self.eventNameInput = textField
         })
         
         self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func someHandler(alert: UIAlertAction!) {
+        println(self.eventNameInput!.text)
     }
     
     override func viewDidLoad() {
