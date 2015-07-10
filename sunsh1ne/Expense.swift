@@ -1,11 +1,3 @@
-//
-//  Expense.swift
-//  sunsh1ne
-//
-//  Created by Taylor Jackson on 2015-07-05.
-//  Copyright (c) 2015 iApplify. All rights reserved.
-//
-
 import Foundation
 
 public class Expense {
